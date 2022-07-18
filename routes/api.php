@@ -24,15 +24,15 @@ use App\Http\Controllers\API\PublicNotesController;
 Route::group(['middlewareauth => sanctum'], function () {
     Route::get('/user', [AuthController::class, 'user']);
     Route::group(['prefix' => 'mynotes'], function () {
-        Route::get('/list/{id}', [MyNotesController::class, 'index'])->middleware('auth:sanctum');
-        Route::post('/create', [MyNotesController::class, 'store'])->middleware('auth:sanctum');
-        Route::get('/show/{id}', [MyNotesController::class, 'show'])->middleware('auth:sanctum');
-        Route::put('/update/{id}', [MyNotesController::class, 'update'])->middleware('auth:sanctum');
-        Route::delete('/delete/{id}', [MyNotesController::class, 'destroy'])->middleware('auth:sanctum');
+        Route::get('/list/{id}', [MyNotesController::class, 'index']);
+        Route::post('/create', [MyNotesController::class, 'store']);
+        Route::get('/show/{id}', [MyNotesController::class, 'show']);
+        Route::put('/update/{id}', [MyNotesController::class, 'update']);
+        Route::delete('/delete/{id}', [MyNotesController::class, 'destroy']);
     });
     Route::group(['prefix' => 'publicnotes'], function () {
-        Route::get('/list', [PublicNotesController::class, 'index'])->middleware('auth:sanctum');
-        Route::get('/show/{id}', [PublicNotesController::class, 'show'])->middleware('auth:sanctum');
+        Route::get('/list', [PublicNotesController::class, 'index']);
+        Route::get('/show/{id}', [PublicNotesController::class, 'show']);
     });
     Route::post('/logout', [AuthController::class, 'logout']);
 });
