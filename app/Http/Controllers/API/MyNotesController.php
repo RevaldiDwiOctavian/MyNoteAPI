@@ -14,7 +14,7 @@ class MyNotesController extends Controller
     public function index($id)
     {
         $myNotes = MyNote::all()->where( 'user_id', $id );
-        return response()->json($myNotes);
+        return response()->json(['data' => $myNotes]);
     }
 
     public function store(Request $request)
