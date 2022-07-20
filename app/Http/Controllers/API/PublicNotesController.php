@@ -12,7 +12,7 @@ class PublicNotesController extends Controller
 {
     public function index()
     {
-        $myNotes = MyNote::all()->sortByDesc('id');
+        $myNotes = MyNote::all();
         return response()->json($myNotes);
     }
 
