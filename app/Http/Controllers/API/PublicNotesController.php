@@ -12,7 +12,7 @@ class PublicNotesController extends Controller
 {
     public function index()
     {
-        $myNotes = MyNote::all()->where( 'is_public', true );
+        $myNotes = MyNote::all();
         return response()->json($myNotes);
     }
 
