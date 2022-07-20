@@ -17,7 +17,7 @@ class CreateMyNotesTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('body');
-            $table->boolean('is_public')->default(false);
+            $table->boolean('is_public')->default(true);
             $table->string('user_id');
             $table->timestamps();
         });
